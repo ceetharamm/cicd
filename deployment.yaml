@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   labels:
     app: mypyt
-  name: mypyt-${BUILD_NUMBER}
+  name: mypyt
 spec:
   replicas: 2
   selector:
