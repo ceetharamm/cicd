@@ -14,7 +14,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build("pyimage3")
+          dockerImage = docker.build("pyimage4:latest")
         }
       }
     }
