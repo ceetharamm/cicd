@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   labels:
     app: mypyt
-  name: mypyt
+  name: mypyt_dep
 spec:
   replicas: 2
   selector:
@@ -24,10 +24,10 @@ kind: Service
 metadata:
   labels:
     app: mypyt
-  name: mypyt
+  name: mypyt_svc
 spec:
   ports:
-  - name: 80-80
+  - name: mypyt
     port: 80
     protocol: TCP
     targetPort: 80
