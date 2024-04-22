@@ -30,8 +30,8 @@ metadata:
 spec:
   ports:
   - name: mypyt
-    port: 80
     protocol: TCP
+    port: 5000
     targetPort: 5000
   selector:
     app: mypyt
