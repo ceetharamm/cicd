@@ -11,15 +11,13 @@ pipeline {
         git credentialsId: 'a7318ad5e558-gc', url: 'https://github.com/ceetharamm/cicd.git'
       }
     }
-    
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build("ceetharamm/pyimage3:latest")
+          dockerImage = docker.build("pyimage3")
         }
       }
     }
-    
     stage('Push Image') {
       steps{
         script {
@@ -31,6 +29,5 @@ pipeline {
         }
       }
     }
-    
   }
 }
