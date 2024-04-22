@@ -15,7 +15,7 @@ aramm/pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build("ceetharamm/pyimage")
+          dockerImage = docker.build("ceetharamm/pyimage:latest")
         }
       }
     }
@@ -26,6 +26,7 @@ aramm/pipeline {
             docker.withRegistry('https://registry.hub.docker.com', 'DockerCred') {
             dockerImage.push("${env.BUILD_NUMBER}")
             dockerImage.push("latest")
+            dockerImage.push()
             }
         }
       }
