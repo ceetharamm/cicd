@@ -25,6 +25,7 @@ pipeline {
       steps{
         script {
             docker.withRegistry('', 'DockerCred') {
+            dockerImage.push('latest')
             dockerImage.push()
             }
         }
