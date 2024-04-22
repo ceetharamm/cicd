@@ -1,7 +1,7 @@
 pipeline {
   environment {
     ENVRMNT = "pdc"
-    IMAGE_TAG_NAME = "ceetharamm/mypyt"+ ":$BUILD_NUMBER"
+    IMAGE_TAG_NAME = "ceetharamm/mypy"+ ":$BUILD_NUMBER"
   }
   
   agent any
