@@ -1,4 +1,4 @@
-aramm/pipeline {
+pipeline {
   environment {
     ENVRMNT = "pdc"
   }
@@ -15,7 +15,7 @@ aramm/pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build("pyimage3:latest")
+          dockerImage = docker.build("ceetharamm/pyimage3:latest")
         }
       }
     }
