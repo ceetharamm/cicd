@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   labels:
     app: mypyt
-  name: mypyt
+  name: mypyt-${BUILD_NUMBER}
 spec:
   replicas: 2
   selector:
@@ -16,7 +16,7 @@ spec:
         app: mypyt
     spec:
       containers:
-      - image: ceetharamm/mypy:${BUILD_NUMBER}
+      - image: ceetharamm/mypy:latest
         name: mypyt
 ---
 apiVersion: v1
