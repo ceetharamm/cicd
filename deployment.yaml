@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   labels:
     app: mypyt
-  name: mypyt_dep
+  name: mypyt-dep
 spec:
   replicas: 2
   selector:
@@ -24,7 +24,7 @@ kind: Service
 metadata:
   labels:
     app: mypyt
-  name: mypyt_svc
+  name: mypyt-svc
 spec:
   ports:
   - name: mypyt
