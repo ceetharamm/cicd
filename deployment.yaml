@@ -18,6 +18,8 @@ spec:
       containers:
       - image: ceetharamm/mypy:latest
         name: mypyt
+        ports:
+        - containerPort: 5000
 ---
 apiVersion: v1
 kind: Service
