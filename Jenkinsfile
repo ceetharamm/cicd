@@ -13,13 +13,13 @@ pipeline {
       }
     }
     
-   // stage('Building image') {
-   //   steps{
-   //     script {
-   //       dockerImage = docker.build("$IMAGE_TAG_NAME")
-   //     }
-   //   }
-   // }
+    stage('Building image') {
+      steps{
+        script {
+          dockerImage = docker.build("$IMAGE_TAG_NAME")
+        }
+      }
+    }
     
     stage('Push Image') {
       steps{
@@ -31,11 +31,11 @@ pipeline {
       }
     }
     
-    stage('Remove Unused docker image') {
-      steps{
-        sh "docker rmi $IMAGE_TAG_NAME"
-      }
-    }
+   // stage('Remove Unused docker image') {
+   //   steps{
+   //     sh "docker rmi $IMAGE_TAG_NAME"
+   //   }
+   // }
     
     stage('Deploy App') {
       steps {
