@@ -42,7 +42,7 @@ pipeline {
         script {
           // kubernetesDeploy(configs: "deployment.yaml", kubeconfigId: "dd-kube-config")
           withKubeConfig([credentialsId: 'dd-kube-config', serverUrl: 'https://kubernetes.docker.internal:6443']) {
-            sh 'kubectl apply -f deployment.yaml'
+            bat 'kubectl apply -f deployment.yaml'
           }
         }
       }
