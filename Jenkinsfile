@@ -15,7 +15,7 @@ aramm/pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build("ceetharamm/pyimage3:latest")
+          dockerImage = docker.build("pyimage3:latest")
         }
       }
     }
