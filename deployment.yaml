@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mypyt
+  name: mypyt
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mypyt
+  template:
+    metadata:
+      labels:
+        app: mypyt
+    spec:
+      containers:
+      - image: ceetharamm/mypy:latest
+        name: mypyt
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mypyt
+  name: mypyt
+spec:
+  ports:
+  - name: 80-80
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: mypyt
+  type: NodePort
