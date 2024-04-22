@@ -14,7 +14,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build("ceetharamm/pyimage4:latest"+ ":$BUILD_NUMBER")
+          dockerImage = docker.build("ceetharamm/pyimage4"+ ":$BUILD_NUMBER")
         }
       }
     }
