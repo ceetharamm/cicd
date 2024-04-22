@@ -16,7 +16,7 @@ spec:
         app: mypyt
     spec:
       containers:
-      - image: ceetharamm/mypy:latest
+      - image: ceetharamm/mypy:${BUILD_NUMBER}
         name: mypyt
 ---
 apiVersion: v1
