@@ -14,16 +14,14 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build("pyimage4:latest")
+          dockerImage = docker.build("ceetharamm/pyimage4:latest"+ ":$BUILD_NUMBER")
         }
       }
     }
     stage('Push Image') {
       steps{
         script {
-            docker.withRegistry('https://registry.hub.docker.com/ceetharamm/', 'DockerCred') {
-            dockerImage.push("${env.BUILD_NUMBER}")
-            dockerImage.push("latest")
+            docker.withRegistry('', 'DockerCred') {
             dockerImage.push()
             }
         }
