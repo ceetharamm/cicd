@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git credentialsId: 'a7318ad5e558-gc', url: 'https://github.com/ceetharamm/cicd.git'
+        git credentialsId: 'GitCred', url: 'https://github.com/ceetharamm/cicd.git'
       }
     }
     
