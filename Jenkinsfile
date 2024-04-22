@@ -31,6 +31,12 @@ pipeline {
       }
     }
     
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $IMAGE_TAG_NAME"
+      }
+    }
+    
     stage('Deploy App') {
       steps {
         script {
