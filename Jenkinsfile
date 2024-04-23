@@ -12,15 +12,7 @@ pipeline {
         git credentialsId: 'GitCred', url: 'https://github.com/ceetharamm/cicd.git'
       }
     }
-    
-   // stage('Building image') {
-   //   steps{
-   //     script {
-   //       dockerImage = docker.build("$IMAGE_TAG_NAME")
-   //     }
-   //   }
-   // }
-    
+
     stage('Push Image') {
       steps{
         script {
