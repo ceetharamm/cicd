@@ -2,11 +2,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: mypyt-dep
   labels:
     app: mypyt
-  name: mypyt-dep
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: mypyt
@@ -16,23 +16,22 @@ spec:
         app: mypyt
     spec:
       containers:
-      - image: ceetharamm/mypy:latest
-        name: mypyt
-        ports:
-        - containerPort: 5000
+      - name: mypyt
+        image: ceetharamm/pyapp:latest
 ---
 apiVersion: v1
 kind: Service
 metadata:
+  name: mypyt-svc
   labels:
     app: mypyt
-  name: mypyt-svc
 spec:
+  type: NodePort
   ports:
   - name: mypyt
     protocol: TCP
-    port: 5000
+    port: 8089
+    nodePort: 32123
     targetPort: 5000
   selector:
     app: mypyt
-  type: NodePort

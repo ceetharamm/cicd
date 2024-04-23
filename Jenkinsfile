@@ -1,7 +1,7 @@
 pipeline {
   environment {
     ENVRMNT = "pdc"
-    IMAGE_TAG_NAME = "ceetharamm/mypy"+ ":$BUILD_NUMBER"
+    IMAGE_TAG_NAME = "ceetharamm/pyapp"+ ":$BUILD_NUMBER"
   }
   
   agent any
@@ -32,11 +32,11 @@ pipeline {
       }
     }
     
-   // stage('Remove Unused docker image') {
-   //   steps{
-   //     sh "docker rmi $IMAGE_TAG_NAME"
-   //   }
-   // }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $IMAGE_TAG_NAME"
+      }
+    }
     
     stage('Deploy App') {
       steps {
